@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+    <title>My Website</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
+    <button id="ajaxButton">Make AJAX Request</button>
+    <script>
+        $(document).ready(function() {
+            $('#ajaxButton').click(function() {
+                $.ajax({
+                    url: 'https://api.xxx.com/set-cookies-please',
+                    method: 'GET',
+                    success: function(response) {
+                        console.log('AJAX request successful');
+                        console.log(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX request failed');
+                        console.error(error);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
